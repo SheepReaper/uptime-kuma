@@ -3,5 +3,5 @@
   "extends": [
     "local>SheepReaper/renovate-config"
   ],
-  "includeForks": true
+  "forkProcessing": "enabled"
 }
