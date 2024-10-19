@@ -17,11 +17,11 @@ jobs:
   json-yaml-validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
 
       - name: json-yaml-validate
         id: json-yaml-validate
-        uses: GrantBirki/json-yaml-validate@v2.4.0
+        uses: GrantBirki/json-yaml-validate@ce9d0c1ff859732d3839a5e1cdc22ff203aa464a # v2.4.0
         with:
           comment: "true" # enable comment mode
           exclude_file: ".github/config/exclude.txt" # gitignore style file for exclusions
