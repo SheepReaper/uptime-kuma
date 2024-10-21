@@ -168,7 +168,7 @@
         "chartjs-adapter-dayjs-4": "~1.0.4",
         "concurrently": "^7.1.0",
         "core-js": "~3.26.1",
-        "cronstrue": "~2.24.0",
+        "cronstrue": "~2.50.0",
         "cross-env": "~7.0.3",
         "delay": "^5.0.0",
         "dns2": "~2.0.1",
