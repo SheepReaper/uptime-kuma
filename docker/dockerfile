@@ -1,16 +1,16 @@
-ARG BASE_IMAGE=louislam/uptime-kuma:base2
+ARG BASE_IMAGE=louislam/uptime-kuma:base2@sha256:2b15bdd91cfa4be4759f5ff04269ecf818f40f899eabeda63ee33fb524380a3e
 
 ############################################
 # Build in Golang
 # Run npm run build-healthcheck-armv7 in the host first, otherwise it will be super slow where it is building the armv7 healthcheck
 # Check file: builder-go.dockerfile
 ############################################
-FROM louislam/uptime-kuma:builder-go AS build_healthcheck
+FROM louislam/uptime-kuma:builder-go@sha256:667242b391c1b201591e0a99bc223772d2b94bde87429adaa7daa024b88bd924 AS build_healthcheck
 
 ############################################
 # Build in Node.js
 ############################################
-FROM louislam/uptime-kuma:base2 AS build
+FROM louislam/uptime-kuma:base2@sha256:2b15bdd91cfa4be4759f5ff04269ecf818f40f899eabeda63ee33fb524380a3e AS build
 USER node
 WORKDIR /app
 
@@ -59,7 +59,7 @@ USER node
 ############################################
 # Build an image for testing pr
 ############################################
-FROM louislam/uptime-kuma:base2 AS pr-test2
+FROM louislam/uptime-kuma:base2@sha256:2b15bdd91cfa4be4759f5ff04269ecf818f40f899eabeda63ee33fb524380a3e AS pr-test2
 WORKDIR /app
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
@@ -88,7 +88,7 @@ CMD ["npm", "run", "start-pr-test"]
 ############################################
 # Upload the artifact to Github
 ############################################
-FROM louislam/uptime-kuma:base2 AS upload-artifact
+FROM louislam/uptime-kuma:base2@sha256:2b15bdd91cfa4be4759f5ff04269ecf818f40f899eabeda63ee33fb524380a3e AS upload-artifact
 WORKDIR /
 RUN apt update && \
     apt --yes install curl file
