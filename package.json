@@ -71,7 +71,7 @@
         "rebase-pr-to-1.23.X": "node extra/rebase-pr.js 1.23.X"
     },
     "dependencies": {
-        "@grpc/grpc-js": "~1.8.22",
+        "@grpc/grpc-js": "~1.9.0",
         "@louislam/ping": "~0.4.4-mod.1",
         "@louislam/sqlite3": "15.1.6",
         "@vvo/tzdb": "^6.125.0",
