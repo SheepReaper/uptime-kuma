@@ -3,7 +3,7 @@ version: '3.8'
 services:
   uptime-kuma:
     container_name: uptime-kuma-dev
-    image: louislam/uptime-kuma:nightly2
+    image: louislam/uptime-kuma:nightly2@sha256:b4cb543ae1fbf9f278556001dec1c6ce39bfe1089c4275d93da740071d6e2339
     volumes:
       #- ./data:/app/data
       - ../server:/app/server
