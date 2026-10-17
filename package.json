@@ -85,7 +85,7 @@
         "chroma-js": "~2.4.2",
         "command-exists": "~1.2.9",
         "compare-versions": "~3.6.0",
-        "compression": "~1.7.4",
+        "compression": "~1.8.0",
         "croner": "~8.1.0",
         "dayjs": "~1.11.5",
         "dev-null": "^0.1.1",
