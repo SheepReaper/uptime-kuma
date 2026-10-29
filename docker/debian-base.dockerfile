@@ -1,5 +1,5 @@
 # If the image changed, the second stage image should be changed too
-FROM node:20-bookworm-slim AS base2-slim
+FROM node:20-bookworm-slim@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d6f0193e162b5febfc0 AS base2-slim
 ARG TARGETPLATFORM
 
 # Specify --no-install-recommends to skip unused dependencies, make the base much smaller!
@@ -52,7 +52,7 @@ COPY ./docker/etc/sudoers /etc/sudoers
 # MariaDB, Chromium and fonts
 # Make sure to reuse the slim image here. Uncomment the above line if you want to build it from scratch.
 # FROM base2-slim AS base2
-FROM louislam/uptime-kuma:base2-slim AS base2
+FROM louislam/uptime-kuma:base2-slim@sha256:56a19c052fef98b0d742384f84577b6952b5b4a32dd251cfadd0677120a58f3f AS base2
 ENV UPTIME_KUMA_ENABLE_EMBEDDED_MARIADB=1
 RUN apt update && \
     apt --yes --no-install-recommends install chromium fonts-indic fonts-noto fonts-noto-cjk mariadb-server && \
